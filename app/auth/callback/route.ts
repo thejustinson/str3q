@@ -12,8 +12,11 @@ export async function GET(request: Request) {
     if (!error) {
       return NextResponse.redirect(`${origin}/dashboard`)
     }
+
+    // Pass the exact Supabase error back to the URL so we can debug it
+    return NextResponse.redirect(`${origin}/?error=${encodeURIComponent(error.message)}`)
   }
 
-  // Handle errors or missing code
-  return NextResponse.redirect(`${origin}/?error=auth-callback-failed`)
+  // Handle missing code
+  return NextResponse.redirect(`${origin}/?error=no-code-provided`)
 }
