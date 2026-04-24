@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Syne, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { GlobalInteraction } from "@/components/GlobalInteraction";
 
 const syne = Syne({
   variable: "--font-syne",
@@ -35,8 +36,10 @@ export default function RootLayout({
       lang="en"
       className={`${syne.variable} ${dmSans.variable} ${jetbrainsMono.variable} antialiased`}
     >
-      <body className="font-body min-h-screen bg-ash-dark text-ghost-white flex flex-col">
-        {children}
+      <body className="font-body min-h-screen bg-ash-dark text-ghost-white flex flex-col select-none">
+        <GlobalInteraction>
+           {children}
+        </GlobalInteraction>
       </body>
     </html>
   );

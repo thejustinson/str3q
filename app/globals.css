@@ -6,6 +6,16 @@
   }
 }
 
+* {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+input, textarea {
+  user-select: auto !important;
+  -webkit-user-select: auto !important;
+}
+
 :root {
   --flame-orange: #FF5E1A;
   --flame-glow: rgba(255, 94, 26, 0.4);
