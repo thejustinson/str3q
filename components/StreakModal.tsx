@@ -1,7 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { DynamicIcon } from "./DynamicIcon";
-import { Flame } from "lucide-react";
+import { Logo } from "@/components/Logo";
 
 export function StreakModal({ isOpen, onClose, task }: any) {
   if (!task) return null;
@@ -24,7 +24,7 @@ export function StreakModal({ isOpen, onClose, task }: any) {
               </div>
               <div>
                 <h2 className="text-3xl font-display font-bold">{task.name}</h2>
-                <p className="text-[var(--flame-orange)] font-mono flex items-center gap-2 mt-1 font-bold"><Flame size={14} className="text-[var(--flame-orange)]"/> 12 Day Streak</p>
+                <p className="text-[var(--flame-orange)] font-mono flex items-center gap-2 mt-1 font-bold"><Logo size={14} className="text-[var(--flame-orange)]"/> 12 Day Streak</p>
               </div>
            </header>
            

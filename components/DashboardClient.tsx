@@ -7,6 +7,7 @@ import { createClient } from "@/utils/supabase/client";
 import { DynamicIcon } from "./DynamicIcon";
 import { AddTaskModal } from "./AddTaskModal";
 import { StreakModal } from "./StreakModal";
+import { Logo } from "@/components/Logo";
 import { Plus, Users, Lock } from "lucide-react";
 
 export function DashboardClient({ user, profile, initialActivities, initialCompletions = [] }: any) {
@@ -60,7 +61,7 @@ export function DashboardClient({ user, profile, initialActivities, initialCompl
              <div>
                 <h1 className="text-4xl font-display font-bold">What's up, @{profile.username}</h1>
                 <p className="text-[var(--ghost-muted)] mt-2 font-mono flex items-center gap-2">
-                   <DynamicIcon name="Flame" size={16} className={completedIds.length > 0 ? "text-[var(--flame-orange)]" : "text-[var(--ghost-muted)]"} /> 
+                   <Logo size={16} className={completedIds.length > 0 ? "text-[var(--flame-orange)]" : "text-[var(--ghost-muted)]"} /> 
                    {globalStreak} Day General Streak
                 </p>
              </div>

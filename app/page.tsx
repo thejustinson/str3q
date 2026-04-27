@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { PlusSquare, CheckCircle2, Flame, Users, Link as LinkIcon, Gem, Monitor, Smartphone, LayoutTemplate, Mail, Gamepad2, Dumbbell, Code, BookOpen, Sparkles, Snowflake } from "lucide-react";
+import { PlusSquare, CheckCircle2, Users, Link as LinkIcon, Gem, Monitor, Smartphone, LayoutTemplate, Mail, Gamepad2, Dumbbell, Code, BookOpen, Sparkles, Snowflake } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import { createClient } from "@/utils/supabase/client";
+import { Logo } from "@/components/Logo";
 
 function HeroCounter() {
   const [count, setCount] = useState(0);
@@ -42,7 +43,7 @@ function HeroCounter() {
 
   return (
     <div className="streak-display mt-20">
-      <span className="streak-flame flex items-center justify-center"><Flame size={90} fill="currentColor" strokeWidth={1} /></span>
+      <span className="streak-flame flex items-center justify-center text-[var(--flame-orange)]"><Logo size={90} /></span>
       <span className="counter-num">{count}</span>
     </div>
   );
@@ -81,7 +82,7 @@ export default function Home() {
       >
         <div className="max-w-6xl mx-auto flex justify-between items-center w-full">
           <a href="#" className="font-display font-bold text-2xl flex items-center gap-2 tracking-tight">
-            <Flame className="text-[var(--flame-orange)]" fill="currentColor" size={28} />
+            <Logo className="text-[var(--flame-orange)]" size={28} />
             str3q
           </a>
           <div className="hidden md:flex gap-8 font-medium text-[15px]">
@@ -203,7 +204,7 @@ export default function Home() {
               className="bg-[var(--smoke-mid)] border border-white/5 rounded-3xl p-8 hover:border-white/10 hover:bg-[var(--smoke-light)] transition-colors duration-300 group"
             >
               <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-[var(--flame-orange)] mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-[5deg] group-hover:bg-[var(--flame-glow)] group-hover:text-white">
-                <Flame size={32} />
+                <Logo size={32} />
               </div>
               <h3 className="font-display text-2xl mb-3">3. Build your streak</h3>
               <p className="text-[var(--ghost-muted)]">Watch the flame grow. Hit milestones at 7, 30, and 100 days. Don't let it freeze. Don't let it die.</p>
@@ -248,7 +249,7 @@ export default function Home() {
                   <span className="font-semibold text-[16px]">{user.name}</span>
                   <span className="text-[var(--ghost-muted)] text-[14px] mono mt-0.5 flex items-center gap-1">
                     <span className={`flex items-center font-bold ${user.isFrozen ? "text-[var(--frost-blue)]" : "text-[var(--flame-orange)]"}`}>
-                      {user.isFrozen ? <Snowflake size={14} fill="currentColor" className="mr-1" /> : <Flame size={14} fill="currentColor" className="mr-1" />} {user.stats}
+                      {user.isFrozen ? <Snowflake size={14} fill="currentColor" className="mr-1" /> : <Logo size={14} className="mr-1" />} {user.stats}
                     </span> 
                     days · {user.activity}
                   </span>
@@ -363,7 +364,7 @@ export default function Home() {
       <footer className="w-full border-t border-white/5 py-10 px-6">
         <div className="max-w-6xl mx-auto flex justify-between items-center text-[var(--ghost-muted)] text-sm">
           <div className="font-display font-medium text-xl text-[var(--ghost-white)] flex items-center gap-2">
-            <Flame className="text-[var(--flame-orange)]" fill="currentColor" strokeWidth={1.5} size={24} />
+            <Logo className="text-[var(--flame-orange)]" size={24} />
             str3q
             <span className="font-body font-normal text-sm text-[var(--ghost-muted)] ml-3 tracking-normal">Show up. Every day.</span>
           </div>
